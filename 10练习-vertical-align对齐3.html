@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            width: 600px;
+            background-color: pink;
+        }
+
+        img{
+            vertical-align: middle;
+            /* 或者你也可以写成：display：block；也行。为什么？这是因为浏览器将行内标签和行内块标签当成了文字去处理，默认基线对齐 */
+            /* display: block; */
+
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 第四种情况，div父级标签里面有内容，在这里是img图片，图片的下面会有一部分多余的父级 -->
+    <div class="father">
+        <img src="./images/R-C.jfif" alt="">
+    </div>
+    
+</body>
+</html>

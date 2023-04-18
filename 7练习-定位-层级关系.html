@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+        }
+
+        .one{
+            position: absolute;
+            left: 20px;
+            top: 50px;
+            background-color: pink;
+            z-index: 2;
+
+
+        }
+
+        .two{
+            position: absolute;
+            left: 50px;
+            top: 100px;
+            background-color: skyblue;
+
+        }
+        
+        /* 默认情况下，后面写的标签会压住前面写的标签 */
+
+        /* z-index：整数；取值越大，显示顺序越靠上，z-index的默认值是0*/
+        /* 注意：z-index必须配合定位才可以生效，否则写了也是白写 */
+
+        /* 注意，显示顺序为：标准流<浮动<定位 */
+
+
+    </style>
+</head>
+<body>
+    <div class="one">one</div>
+    <div class="two">two</div>
+    <!-- 默认情况下，后面写的标签会压住前面写的标签，因为在这里，two标签的位置要后于one标签的位置 -->
+    
+</body>
+</html>

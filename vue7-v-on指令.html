@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 2.html结构 -->
+    <div id="app">
+        <input type="button" value="v-on指令" v-on:click="doIt">
+        <!-- v-on:click="doIt" 格式:v-on 冒号 事件名 等号 引号 方法 -->
+        <input type="button" value="v-on简写" @click="doIt">
+        <!-- 简写的时候 "v-on冒号" 被替换为 "@" -->
+
+        <!-- 双击事件 -->
+        <input type="button" value="双击事件" @dblclick="doIt">
+
+        <!-- 通过事件修改值,vue里面一般不去操作dom元素,而是通过数据的改变来改变值 -->
+        <h2 @click="changeFood">
+            {{food}}
+        </h2>
+    </div>
+
+
+    <!-- 1.导入开发环境版本的vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- 3.创建vue实例 -->
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                food:"西兰花炒蛋"
+            },
+            methods:{
+                doIt:function(){
+                    alert("做IT");
+                },
+                changeFood:function(){
+                    // console.log(this.food);
+                    // 注意,要通过this关键字来拿到food这个值
+                    this.food+="好好吃!"
+
+                }
+            }
+        })
+        // 这里的methods是方法
+        // 注意不要少写逗号和分号
+    </script>
+
+    <!-- 总结:
+    1.v-on指令的作用是:为元素绑定事件
+2.事件名不需要写on
+3.指令可以简写为@
+4.绑定方法定义在methods属性中 -->
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--   v-text指令会将所有的东西都给替换掉，用插值表达式可以替换部分内容 -->
+        <h2 v-text="message">深圳</h2>
+        <h2 v-text="info">深圳</h2>
+
+        <h2>{{message}}深圳</h2>
+        <!-- 除了插值表达式之外，其他的“深圳”都不会被渲染上去 -->
+
+        <!-- 字符串的拼接 -->
+        <h2 v-text="message+'!'">深圳</h2>
+        <h2 v-text="info+'!'">深圳</h2>
+        <h2>{{message+'!'}}深圳</h2>
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                message:"黑马程序员",
+                info:"前端与移动教研部"
+            }
+        })
+    </script>
+
+    <!-- 总结：
+    1.v-text指令的作用是：设置标签的内容（textContent）
+2.默认写法会替换全部内容，使用差值表达式{{}}可以替换指定内容 -->
+</body>
+</html>

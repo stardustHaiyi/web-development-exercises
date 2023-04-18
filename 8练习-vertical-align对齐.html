@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 浏览器遇到行内和行内块儿标签当作文字处理，默认文字是按基线对齐 */
+        /* 第一种情况 */
+        input{
+            height: 50px;
+            box-sizing: border-box;
+            vertical-align: middle;
+            /* 基线对齐 */
+        }
+        
+        /* 第二种情况 */
+        img{
+            vertical-align: middle;
+            /* 找大图片加 */
+        } 
+
+    </style>
+</head>
+<body>
+    <!-- 第一种情况：文本输入框与按钮 -->
+    <!-- <input type="text"><input type="button" value="搜索"> -->
+
+    <!-- 第二种情况：图片与文本输入框 -->
+    <img src="./images/微信图片_20230409100037.jpg" alt=""><input type="text">
+    
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-html="content"></p>
+        <p v-text="content"></p>
+        <!-- 如果（content）是普通文本的话，v-html与v-text的结果一样。但是如果是标签的话，前者会是超链接，后者会是<a href="http://www.itheima.com">黑马程序员</a> -->
+    </div>
+
+    <!-- 创建var实例 -->
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                // content:'黑马程序员'
+                content:'<a href="http://www.itheima.com">黑马程序员</a>'
+            }
+        })
+    </script>
+
+    <!-- 总结：
+    1.v-html指令的作用是：设置元素的innerHTML
+2.内容中有html结构会被解析为标签
+3.v-text指令无论内容是什么，只会解析为文本 -->
+    
+</body>
+</html>

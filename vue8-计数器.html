@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 2.html结构 -->
+    <div id="app">
+            <!-- 计数器功能区域 -->
+        <div class="input-num">
+            <button @click="sub">
+                -
+            </button>
+            <span>{{ num }}</span>
+            <button @click="add">
+                +
+            </button>
+        </div>
+
+    </div>
+
+    <!-- 1.导入vue.js (开发环境版本,包含了有帮助的命令行警告) -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- 3.创建vue实例 -->
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                num:1
+            },
+            methods:{
+                add:function(){
+                    // console.log('add');
+                    // 记得在浏览器中打开console查看(f12,console)
+                    if(this.num<10){
+                        this.num++;
+                    }else{
+                        alert("别点了,最大了");
+                    }
+                    
+                },
+                sub:function(){
+                    // console.log('sub');
+                    if(this.num>0){
+                        this.num--;
+                    }else{
+                        alert('别点了,最小了');
+                    }
+                    
+                }
+            }
+        })
+    </script>
+
+    <!-- 总结:
+    1.创建vue实例时:el(挂载点),data(数据),methods(方法)
+2.v-on指令的作用是:绑定事件,简写为:@
+3.方法中通过this关键字获取data中的数据
+4.v-text指令的作用是:设置元素的文本值,简写为{{}} -->
+    
+</body>
+</html>

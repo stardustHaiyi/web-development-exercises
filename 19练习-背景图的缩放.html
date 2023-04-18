@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 600px;
+            height: 500px;
+            background-color: pink;
+            background-image: url(./images/背景图1.jfif);
+
+            /* 不让背景图片复制很多份 */
+            background-repeat: no-repeat;
+
+            /* background-size: 500px; */
+            /* background-size: 600px; */
+            /* 500px不会覆盖满盒子，盒子的尺寸按最大的一方算（宽，高最大的），这里宽最大width；600px；，所以盒子的尺寸就是600px，background-size: 600px;可以把盒子完全覆盖 */
+
+            /* background-size: 50%; */
+            /* 百分比也是按照宽和高最大的一方的一半来算的 */
+
+            /* background-size: contain; */
+            /* 只要背景图的宽和高任意一方和盒子的宽和高任意一方相同了，那么就停止缩放了。所以盒子可能会留白 */
+
+            background-size: cover;
+            /* 保证宽和高和盒子的尺寸完全相同，导致图片显示不全（图片被裁剪） */
+
+            /* 工作中，图的比例和盒子的比例都是相同的 */
+
+            /* background的复合属性：background:color image repeat position/size (在position的后面放上一个斜杠和size) */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

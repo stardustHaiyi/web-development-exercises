@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1.导入vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- 2.导入axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- 编码的位置尽量写在导入内容之后 -->
+
+    <!-- 接口：随机获取一条笑话
+    请求地址：https://autumnfish.cn/api/joke
+    请求方法：get
+    请求参数：无
+    响应内容：随机笑话 -->
+
+    <!-- html框架 -->
+    <div id="app">
+        <input type="button" value="获取笑话" @click="getJoke">
+        <p>{{ joke }}</p>
+        <!-- v-text的差值表达式 -->
+
+    </div>
+
+    <!-- 创建vue实例 -->
+    <script>
+        var app =new Vue({
+            el:"#app",
+            data:{
+                joke:"很好笑的笑话"
+
+            },
+            methods:{
+                getJoke:function(){
+
+                    // this会改变,但在axios的上边是可以拿到this的值的
+                    // console.log(this.joke);
+                    // 会打印出“很好笑的笑话”
+                    var that = this;
+
+                    axios.get("https://autumnfish.cn/api/joke").then(function(response){
+                        // console.log(response);
+                        // 如何获取请求到的笑话？会发现这些笑话是保存在data里面的，用response.data就可以获取
+                        console.log(response.data);
+
+                        // console.log(this.joke);
+                        // 会打印出“undefined”,说明axios内外的this改变了
+
+                        that.joke = response.data;
+
+                    },function(err){
+                        console.log(err);
+                    })
+                }
+            }
+        })
+    </script>
+
+
+<!-- 总结：
+1.axios回调函数中的this已经改变，无法访问到data中的数据
+2.把this保存起来，回调函数中直接使用保存的this即可 -->
+    
+</body>
+</html>

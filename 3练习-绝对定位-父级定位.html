@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+        }
+
+        .son{
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+        }
+
+        .sun{
+            position: absolute;
+            right: 20px;
+            /* 因为父级没有定位，所以以浏览器为参照物进行定位。right：20px是指浏览器的右边框到sun的距离是20px，不是sun向右移动了20px */
+
+            /* 如果在sun的父级son的css里面写上 position: absolute;或是position：relative；的话，那么sun就会以父级son为参照进行移动，这时的right：20px；就是：son的最右边距sun的距离是20px。 */
+
+            /* 一般在工作中，会把父级的定位写成position：relative； */
+
+            /* 子绝父相：子级绝对定位，父级相对定位 */
+
+            /* 绝对定位的父级不仅仅是父，也可以是爷爷，太爷爷。。。 */
+
+            /* 绝对定位是逐级查找最近的父级，如果没有，就以浏览器为参照物 */
+
+
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">
+            <div class="sun"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+        }
+
+        .one{
+            /* visibility: hidden; */
+            /* 可以隐藏，但是位置还是被它占着（占位隐藏），在工作中不常用 */
+
+            display: none;
+            /* 不占位隐藏，工作中常用 */
+
+            background-color: pink;
+        }
+
+        .two{
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="one">123</div>
+    <div class="two">456</div>
+    
+</body>
+</html>

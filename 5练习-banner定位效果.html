@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .banner{
+            margin: 0 auto;
+            width: 1280px;
+            height: 1152px;
+            /* transform: translate(-50%,-50%); */
+            position: relative;
+        }
+
+        .mask{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            /* 绝对定位的盒子的显示模式具备行内块的显示特点：加宽度高度生效，如果没有宽度也没有内容，盒子的宽度尺寸就是0 */
+            height: 150px;
+            width: 1280px;
+            /* 因为有父级，并且父级有宽高，所以子级这里不用加宽度 */
+            background-color: rgba(0, 0, 0, 0.5);
+
+            /* 如果子级和父级的宽度相同，那么宽度可以写成：width:100%; */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <img src="./images/106820037_p0 (1).jpg" alt="">
+        <!-- 遮罩层 -->
+        <div class="mask"></div>
+    </div>
+    
+</body>
+</html>

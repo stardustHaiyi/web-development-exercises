@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 过渡配合hover使用，谁变化谁加过渡属性 */
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+
+            /* 宽度200，悬停的时候宽度600，花费1秒钟 */
+            /* transition: width 1s,background-color 2s; */
+            /* 按照这个格式，每个大部分（属性名，秒数）之间用逗号隔开 */
+            /* 像活塞运动 */
+
+            /* 一般在工作中不会一个一个加，会直接用all */
+            transition: all 1s;
+            /* 如果变化的属性多，直接写all，表示所有 */
+        }
+
+        .box:hover{
+            width:600px;
+            /* 如果不加过渡属性（在变化的盒子上加）的话，它的变化会是一瞬间就变的，很难看 */
+
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    
+</body>
+</html>

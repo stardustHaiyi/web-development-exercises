@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            width: 600px;
+            height: 600px;
+            background-color: pink;
+            
+            line-height: 600px;
+            text-align: center;
+            /* 配合下面子级中的 vertical-align: middle;可以让图片在盒子中水平居中和垂直居中*/
+        }
+
+        img{
+            vertical-align: middle;
+            
+        }
+        /* 注意：想要一张图在我们的盒子里面居中的话，你首先要在父级里面加上一个行高（line-height），然后再在子级里面加上一个vertical-align：middle； */
+
+    </style>
+</head>
+<body>
+    <div class="father">
+        <img src="./images/R-C.jfif" alt="">
+    </div>
+    
+</body>
+</html>

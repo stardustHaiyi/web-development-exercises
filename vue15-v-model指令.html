@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 2.html结构 -->
+    <div id="app">
+        <!-- 绑定一个点击事件，修改message的值 -->
+        <input type="button" value="修改message" @click="setM">
+
+        <input type="text" v-model="message" @keyup.enter="getM">
+        <!-- v-model指令可以将表单元素与data进行绑定 -->
+        <h2>{{ message }}</h2>
+
+    </div>
+
+    <!-- 1.导入vue.js (开发环境版本,包含了有帮助的命令行警告) -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- 3.创建vue实例 -->
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                message:"黑马程序员123"
+            },
+            methods:{
+                getM:function(){
+                    alert(this.message);
+                    // 获取message（通过在表单元素input里面加入事件修饰符和.enter来获取）
+                },
+                setM:function(){
+                    this.message = "酷丁鱼"
+                }
+
+            }
+        })
+    </script>
+
+
+    <!-- 总结：
+
+    获取和设置表单元素的值 (双向数据绑定：你更改两边的任意一边，它们都会同步更新对应的值)
+
+1.v-model指令的作用是便捷的设置和获取表单元素的值
+2.绑定的数据会和表单元素值相关联
+3.绑定的数据和表单元素的值是双向关系-->
+    
+</body>
+</html>

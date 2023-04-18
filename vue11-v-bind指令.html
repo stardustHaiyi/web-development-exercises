@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            border: 1px solid #333;
+        }
+        /* 类选择器 */
+    </style>
+</head>
+<body>
+    <!-- 2.html结构 -->
+    <div id="app">
+        <img v-bind:src="imgSrc" alt="">
+        <!-- v-bind:src=“” 这是完全体的写法-->
+        <br>
+        <img :src="imgSrc" alt="" v-bind:title="imgTitle+'!'" :class="isActive?'active':''" @click="toggleActive">
+        <!-- :src="" 这是简写方法。直接冒号 src 引号 地址-->
+        <!-- v-bind:title="imgTitle"鼠标放到第二张图片上会把imgTitle给渲染上去 -->
+
+        <!-- isActive?'active':'' 这是三元表达式：isActive是否为真？为真的话就取active，否则就是空（除了引号，什么都不写） -->
+
+        <!-- @click="toggleActive" 通过绑定一个点击事件来使用toggleActive方法 -->
+
+        <img :src="imgSrc" alt="" v-bind:title="imgTitle+'!'" :class="{active:isActive}" @click="toggleActive">
+        <!-- :class="{active:isActive}" 对像表达式 {active:isActive} 是否取active取决于isActive，即isActive的值如果是真的话就取active，否则就不取-->
+
+    </div>
+
+    <!-- 1.导入vue.js (开发环境版本,包含了有帮助的命令行警告) -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- 3.创建vue实例 -->
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                imgSrc:"http://www.itheima.com/images/logo.png",
+                // 设置一个在线的img图片地址
+                imgTitle:"黑马程序员",
+                isActive:false
+            },
+            methods:{
+                toggleActive:function(){
+                    this.isActive = !this.isActive;
+                    // 方法：取反
+                }
+            }
+        })
+    </script>
+
+    <!-- 总结：
+    1.v-bind指令的作用是：为元素绑定属性
+2.完整写法是v-bind：属性名
+3.简写的话可以直接省略v-bind，只保留  ：属性名 -->
+    
+</body>
+</html>

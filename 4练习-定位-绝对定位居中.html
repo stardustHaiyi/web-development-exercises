@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            position: absolute;
+            left: 50%;
+            /* margin-left: -150px; */
+            /* 居中 ，让它去哪儿就加哪儿，然后宽的一半的负数为值*/
+
+            top: 50%;
+            /* margin-top: -150px; */
+
+
+            /* 绝对定位没有父级的话会参照浏览器定位 */
+
+            /* left: 50%;是参照参照物的50%移动的 */
+
+            /* 当加了position：absolute;后，盒子不会按照标准流居中 */
+
+            /* margin: 0 auto; */
+            /* 当不加position：absolute;绝对定位的时候盒子是会按照标准流居中的 */
+
+            /* 假如，宽度和高度给你个301px，那么该怎么移动？浏览器解析css是不支持小数的，这时我们要用css自带的位移属性 */
+            transform: translate(-50%,-50%);
+            /* transform: translate(-50%,-50%);表示：位移，自己宽度和高度的一半 */
+
+
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

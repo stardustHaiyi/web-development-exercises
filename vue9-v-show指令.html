@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 2.html结构 -->
+    <div id="app">
+        <!-- <img  v-show="false" src="./images/背景图1.jfif" alt=""> -->
+        <!-- v-show="false"会隐藏图片,v-show="true"会显示图片  -->
+        <input type="button" value="切换显示状态" @click="changeIsShow">
+        <img  v-show="isShow" src="./images/背景图1.jfif" alt="">
+        <!-- 记得一定要写 v-show="isShow" 这个是数据,要通过改变这个数据来切换图片的隐藏于显示-->
+
+        <input type="button" value="累加年龄" @click="addAge">
+
+        <img v-show="age>=18" src="./images/背景图1.jfif" alt="">
+        
+
+    </div>
+
+    <!-- 1.导入vue.js (开发环境版本,包含了有帮助的命令行警告) -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- 3.创建vue实例 -->
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                isShow:false,
+                age:17
+            },
+            methods:{
+                changeIsShow:function(){
+                    this.isShow = !this.isShow;
+                },
+                addAge:function(){
+                    this.age++;
+                }
+            }
+        })
+    </script>
+
+    <!-- 总结:
+    1.v-show指令的作用是:根据真假切换元素的显示状态
+2.原理是修改元素的display,实现显示隐藏
+3.指令后面的内容,最终都会解析为布尔值
+4.值为true元素显示,值为false元素隐藏 -->
+</body>
+</html>

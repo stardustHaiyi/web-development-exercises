@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 2.html结构 -->
+    <div id="app">
+        <input type="button" value="点击" @click="doIt(666,'老铁')">
+        <!-- 参数传递：直接在方法后面加一个括号，括号里面写上实参 -->
+
+        <input type="text" @keyup.enter="sayHi">
+        <!-- @keyup 这是事件修饰符  .enter代表回车-->
+
+    </div>
+
+    <!-- 1.导入vue.js (开发环境版本,包含了有帮助的命令行警告) -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- 3.创建vue实例 -->
+    <script>
+        var app = new Vue({
+            el:"#app",
+            methods:{
+                doIt:function(p1,p2){
+                    // p1和p2是参数（这里是形参），想写几个参数，就往括号里面加几个参数。methods里面加形参，上面的input里面加实参
+                    console.log("做it");
+                    console.log(p1);
+                    console.log(p2);
+                },
+                sayHi:function(){
+                    alert("吃了没");
+
+                }
+
+            }
+        })
+    </script>
+
+    <!-- 总结：
+        
+    传递自定义参数，事件修饰符 
+
+1.事件绑定的方法写成函数调用的形式，可以传入自定义参数
+2.定义方法时需要定义形参来接收传入的实参
+3.事件的后面跟上 .修饰符 可以对事件进行限制
+4..enter可以限制触发的按键为回车-->
+    
+</body>
+</html>

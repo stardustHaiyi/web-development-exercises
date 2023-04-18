@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页开发</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    li{
+        list-style: none;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    .box{
+        height: 50px;
+        background-color: pink;
+
+    }
+
+    .box li{
+        float: left;
+        padding-left: 10px;
+        margin-right: 26px;
+    }
+
+    .box li a{
+        display: block;
+        padding: 0 9px;
+        height: 42px;
+        line-height: 42px;
+        text-align: center;
+        font-size: 18px;
+        color: #050505;
+    }
+
+    .app{
+        position: relative;
+    }
+
+    .picture{
+        position: absolute;
+        left: 50%;
+        top: 52px;
+
+        transform: translate(-50%);
+
+        display: none;
+    }
+
+    .app:hover img{
+        /* 注意：这里把鼠标放到a（class=“app”）标签上面来控制图片的显示与隐藏。所以hover后面要加上img*/
+        display: block;
+    }
+
+
+
+
+</style>
+
+
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">信息</a></li>
+            <li><a href="#">账户</a></li>
+            <li><a href="#">新浪导航</a></li>
+            <li ><a href="#" class="app">二维码
+                <img src="./images/R-C.jfif" alt="" class="picture">
+            </a></li>
+        </ul>
+    </div>
+
+    
+</body>
+</html>

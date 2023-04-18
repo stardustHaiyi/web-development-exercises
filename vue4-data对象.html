@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <h2>
+            <!-- {{school}} -->
+            <!-- 会把school里面的所有东西都渲染上去，如果要指定渲染的话，可以使用点语法 -->
+            {{school.name}} {{school.mobile}}
+        </h2>
+        <ul>
+            <li>
+                {{campus}}
+                <!-- 获取数组，如何取出指定的？用下标 -->
+            </li>
+            <li>{{campus[0]}}</li>
+            <li>{{campus[1]}}</li>
+            <li>{{campus[2]}}</li>
+        </ul>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                message:"你好，小黑",
+                school:{
+                    name:"黑马程序员",
+                    mobile:"400-618-9090"
+                },
+                campus:["北京校区","上海校区","广州校区","深圳校区"]
+            
+            }
+        })
+        // 里面的school：{}是一个对象，campus：[]是数组
+    </script>
+<!-- 总结：
+1.vue中用到的数据定义在data中
+2.data中可以写复杂类型的数据
+3.渲染复杂类型数据时，遵守js的语法即可，如：对象的点语法，数组的索引语法 -->
+
+    
+</body>
+</html>

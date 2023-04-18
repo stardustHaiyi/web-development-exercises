@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .left{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+
+        }
+        .right{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 未运行！！！ -->
+
+
+
+
+
+
+
+    <!-- 2.html结构 -->
+    <div id="mask">
+
+        <!-- 图片 -->
+        <img src="imgArr[index]" alt="">
+
+        <!-- 左箭头 -->
+        <a href="javascript:void(0)" @click="prev" class="left">
+            <img src="./images/prev.png" alt="">
+        </a>
+        
+        <!-- 右箭头 -->
+        <a href="javascript:void(0)" @click="next" class="right">
+            <img src="./images/next.png" alt="">
+        </a>
+
+    </div>
+
+    <!-- 1.导入vue.js (开发环境版本,包含了有帮助的命令行警告) -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- 3.创建vue实例 -->
+    <script>
+        var app = new Vue({
+            el:"#mask",
+            data:{
+                imgArr:["G:\Web_creat_1\images\精灵图1.png",
+                "G:\Web_creat_1\images\精灵图2.png",
+                "G:\Web_creat_1\images\精灵图3.png",
+                "G:\Web_creat_1\images\精灵图4.png",
+                "G:\Web_creat_1\images\精灵图5.png",
+            ],
+                index:0
+            },
+            methods:{
+                prev:function(){
+                    this.index--;
+                    // 切换到上一张
+                },
+                next:function(){
+                    this.index++;
+                    // 切换到下一张
+                }
+            }
+            
+        })
+    </script>
+
+
+<!-- 总结：
+1.列表数据使用数组保存
+2.v-bind指令可以设置元素属性，比如src
+3.v-show和v-if都可以切换元素的显示状态，频繁切换用v-show -->
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!-- 定位的练习 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            position: relative;
+            left: 100px;
+            /* 水平方向 */
+            top: 200px;
+            /* 垂直方向 */
+
+            /* 相对定位 */
+            /* 位置的改变是相对于之前的位置而言的。 */
+
+            /* 特点：
+            1.仍然占有原来的位置
+            2.仍然具有标签原来的显示特点
+            3.改变位置是参照自己原来的位置 */
+            
+            /* 如果只写一个position：relative，不写上下左右方向的话，
+            那么定位不生效
+            如果上下左右方向全都写上的话，
+            那么水平以左（left）为准，垂直以上（top）为准 */
+
+            
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <p>124154658716709769</p>
+    <p>124154658716709769</p>
+    <p>124154658716709769</p>
+    <div class="box"></div>
+    <p>124154658716709769</p>
+    <p>124154658716709769</p>
+    <p>124154658716709769</p>
+    
+</body>
+</html>

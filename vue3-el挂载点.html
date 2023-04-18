@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{message}}
+<!-- 会被原封不动的渲染到页面上，也就是说写在外面没用-->
+
+<!-- 第一种情况，用id选择器 -->
+    <div id="app">
+        {{message}}
+        <span>{{message}}</span>
+        <!-- 可以嵌套，可以将data的值传过来 -->
+    </div>
+
+<!-- 第二种情况，用类选择器 -->
+    <div class="box">
+        {{message}}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- id选择器 ，一般在开发时用id选择器，因为id选择器是唯一的，而类选择器和标签选择器都是可以命中多个元素，会造成语义的不清晰-->
+    <script>
+        var app = new Vue({
+            el:"#app",
+            // el:".app", 类选择器可以
+            // el:"div", 标签选择器可以
+            data:{
+                message:"黑马程序员"
+            }
+        })
+    </script>
+
+    <!-- 类选择器 -->
+    <script>
+        var box = new Vue({
+            el:".box",
+            data:{
+                message:"你好"
+            }
+        })
+    </script>
+    <!-- 标签也可以换成div，span，h1，p等标签都是可以的，但是只能使用双标签，因为单标签的内部无法嵌套{{message}}这种东西 -->
+
+    <!-- 不要将vue挂载到html标签和body标签上面，我们推荐挂载到div标签上面，因为div标签没用特殊的样式，你像h1标签这类的，它们都有特殊的样式 -->
+
+    <!-- 总结：
+    1.vue实例的作用范围是什么？
+vue会管理el选项命中的元素及其内部的后代元素
+
+2.是否可以使用其他的选择器？
+可以使用其他的选择器，但是建议使用ID选择器
+
+3.是否可以设置其他的dom元素?
+可以使用其他的双标签，不能使用HTML和BODY-->
+</body>
+</html>

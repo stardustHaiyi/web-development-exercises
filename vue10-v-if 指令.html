@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- 2.html结构 -->
+     <div id="app">
+        <input type="button" value="切换显示" @click="toggleIsShow">
+        <p v-if="isShow">我是p標簽</p>
+        <!-- 利用v-if指令来切换显示（通过删除dom树来操控,操控dom树对设备资源的利用比较大） -->
+
+        <p v-show="isShow">我是p标签 用v-show指令来修饰</p>
+        <!-- 利用v-show指令来切换显示 （利用的是display来操控）-->
+
+        <h2 v-if="temperature>=35">热死了</h2>
+        <!-- 当温度大于等于35度时会显示“热死了” -->
+
+     </div>
+
+     <!-- 1.导入vue.js (开发环境版本,包含了有帮助的命令行警告) -->
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+     <!-- 3.创建vue实例 -->
+     <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                isShow:false,
+                temperature:40
+                // 设置一个温度，温度的初始值设为40度
+            },
+            methods:{
+                toggleIsShow:function(){
+                    this.isShow = !this.isShow;
+                }
+            }
+        })
+     </script>
+
+
+<!-- 总结：
+1.v-if指的作用是：根据表达式的真假来切换元素的显示状态
+2.本质是通过操纵dom元素来切换显示状态
+3.表达式的值为true，元素存在于dom树中，为false，从dom树中移除 -->
+    
+</body>
+</html>

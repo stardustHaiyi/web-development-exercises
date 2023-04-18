@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            /* 绝对定位，先找已经定位的父级，如果有这样的父级，就以这样的父级为参照物进行定位；有父级，但父级没有定位，以浏览器窗口进行定位 */
+            position: absolute;
+            /* 绝对定位 */
+            left: 0;
+            top: 0;
+            /* 取值为0也是会移动的,无父级就参照浏览器 */
+
+            /* 绝对定位的特点：
+            1.脱标，不占位
+            2.改变标签的显示模式特点：具有行内块儿的显示特点（在一行共存，宽高生效） */
+
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            
+        }
+    </style>
+</head>
+<body>
+    <p>124154658716709769</p>
+    <p>124154658716709769</p>
+    <p>124154658716709769</p>
+    <div class="box"></div>
+    <p>124154658716709769</p>
+    <p>124154658716709769</p>
+    <p>124154658716709769</p>
+</body>
+</html>

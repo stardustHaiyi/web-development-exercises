@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue基础</title>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <!-- 这个大括号叫做插值表达式，作用就是将我们的data（数据）跟页面关联起来 -->
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        // 通过var关键字，创建一个vue实例
+        var app = new Vue({
+            el:"#app",
+            // 你去管理id叫做app的这个元素
+
+            data:{
+                message:"Hello Vue!"
+            }
+        }) 
+        // 这里面的data是Vue实例中要使用到的数据，你用什么数据就写什么数据
+    </script>
+
+    <!-- 总结：如何实现第一个Vue程序？
+    1.导入开发版本的Vue.js
+    
+2.创建Vue实例对象，设置el属性和data属性，el属性（挂载点，通过css选择器，设置vue实例管理的元素。设置完毕之后，el命中的元素的内部用两个大括号修饰的部分，就会被data中同名的数据给替换）
+
+3.使用简洁的模板语法把数据渲染到页面上 -->
+</body>
+</html>
